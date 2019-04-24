@@ -1,4 +1,4 @@
-package com.moon.common.domain;
+package com.moon.common.domain.entity;
 
 import lombok.Data;
 

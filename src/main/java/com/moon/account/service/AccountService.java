@@ -1,9 +1,12 @@
 package com.moon.account.service;
 
+import com.moon.account.domain.dto.AccountsConditionDTO;
 import com.moon.account.domain.dto.CreateAccountDTO;
 import com.moon.account.domain.dto.LoginDTO;
 import com.moon.account.domain.entity.AccountEntity;
 import com.moon.account.domain.vo.LoginVO;
+import com.moon.common.tools.page.PageParam;
+import com.moon.common.tools.page.PageResult;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
@@ -43,4 +46,12 @@ public interface AccountService {
      * @return
      */
     AccountEntity getAccountByUsername(@NotNull(message = "ACCOUNT_LOGIN_DTO_06") String username);
+
+    /**
+     * 根据查询条件获取列表
+     * @param dto
+     * @param pageParam
+     * @return
+     */
+    PageResult getAccounts(AccountsConditionDTO dto, PageParam pageParam);
 }

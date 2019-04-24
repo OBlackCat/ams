@@ -1,13 +1,10 @@
 package com.moon.account.domain.entity;
 
-import com.moon.account.domain.enums.AccountTypeEnum;
-import com.moon.common.domain.BasicEntity;
-import lombok.Builder;
+import com.moon.common.domain.entity.BasicEntity;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * @program: ams
@@ -17,7 +14,6 @@ import java.time.LocalDateTime;
  */
 @Data
 @Entity
-@Builder
 @Table(name = "account")
 public class AccountEntity extends BasicEntity implements Serializable {
 
@@ -27,19 +23,6 @@ public class AccountEntity extends BasicEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    /**
-     * 【用户ID】 关联的用户的唯一标识，账号和用户是一对一的关系
-     */
-    @Column(nullable = false)
-    private Integer userId;
-
-    /**
-     * 【用户类型】 标识该用户为何类型
-     */
-    @Column(nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private AccountTypeEnum accountType;
 
     /**
      * 【用户账号】 一旦创建，不可更新
