@@ -2,8 +2,7 @@ package com.moon.permission.domain.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @auther: Mr.Xu
@@ -16,8 +15,11 @@ import javax.persistence.Table;
 public class PermissionEntity {
 
     /** 权限的唯一标识ID */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /** 权限名 */
+    @Column(nullable = false, length = 30)
     private String name;
 }
