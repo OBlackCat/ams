@@ -1,4 +1,4 @@
-package com.moon.student.domain.entity;
+package com.moon.teacher.domain.entity;
 
 import com.moon.common.domain.entity.BasicEntity;
 import lombok.Data;
@@ -11,23 +11,17 @@ import javax.persistence.Id;
 /**
  * @auther: Mr.Xu
  * @date: 2019-04-24 16:54
- * @description: 学生实体
+ * @description: 教师数据实体
  */
 @Data
-public class StudentEntity extends BasicEntity {
+public class TeacherEntity extends BasicEntity {
 
-    /** 学生实体的唯一标识ID */
+    /** 教师实体的唯一标识ID */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    /** 学生姓名 */
+    /** 教师姓名 */
     @Column(nullable = false, length = 30)
     private String name;
-
-    /** 班级的唯一标识 */
-    @Column(nullable = false)
-    private Integer clazzId;
-
-
 }
