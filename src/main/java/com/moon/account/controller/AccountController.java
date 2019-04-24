@@ -7,6 +7,7 @@ import com.moon.account.domain.entity.AccountEntity;
 import com.moon.account.domain.vo.LoginVO;
 import com.moon.account.service.AccountService;
 import com.moon.common.tools.page.PageParam;
+import com.moon.common.tools.page.PageResult;
 import com.moon.common.tools.result.ApiResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -91,8 +92,8 @@ public class AccountController {
      * @description:
      */
     @GetMapping
-    public ApiResult getAccounts(@RequestBody AccountsConditionDTO dto, PageParam pageParam) {
-//        accountService.getAccounts(dto, pageParam);
-        return null;
+    public ApiResult getAccounts(AccountsConditionDTO dto, PageParam pageParam) {
+        PageResult result = accountService.getAccounts(dto, pageParam);
+        return ApiResult.success(result);
     }
 }

@@ -1,5 +1,6 @@
 package com.moon.account.service;
 
+import com.moon.account.domain.dto.AccountsConditionDTO;
 import com.moon.account.domain.dto.CreateAccountDTO;
 import com.moon.account.domain.dto.LoginDTO;
 import com.moon.account.domain.entity.AccountEntity;
@@ -9,9 +10,14 @@ import com.moon.account.repository.AccountRepository;
 import com.moon.common.service.RedisService;
 import com.moon.common.tools.exception.CustomException;
 import com.moon.common.tools.exception.ExceptionManager;
+import com.moon.common.tools.page.PageParam;
+import com.moon.common.tools.page.PageResult;
 import com.moon.common.tools.utils.MapperUtils;
 import com.moon.common.tools.utils.UUIDUtil;
+import ma.glasnost.orika.Mapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -114,5 +120,19 @@ public class AccountServiceImpl implements AccountService {
         Optional<AccountEntity> optional = accountRepository.findByUsername(username);
         AccountEntity account = optional.orElseThrow(() -> exceptionManager.create("ACCOUNT_LOGIN_01"));//账号不存在，请跟管理员确认
         return account;
+    }
+
+    /**
+     * 根据账号类型查询列表
+     * @param dto
+     * @param pageParam
+     * @return
+     */
+    @Override
+    public PageResult getAccounts(AccountsConditionDTO dto, PageParam pageParam) {
+        AccountEntity accountEntity = MapperUtils.mapperBean(dto, AccountEntity.class);
+        Example<AccountEntity> example = Example.of(accountEntity);
+        Page<AccountEntity> page = accountRepository.findAll(example, pageParam.toPageable());
+        return PageResult.getPageResult(page);
     }
 }
