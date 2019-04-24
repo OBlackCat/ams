@@ -3,10 +3,7 @@ package com.moon.student.domain.entity;
 import com.moon.common.domain.entity.BasicEntity;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @auther: Mr.Xu
@@ -14,6 +11,8 @@ import javax.persistence.Id;
  * @description: 学生实体
  */
 @Data
+@Entity
+@Table(name = "student")
 public class StudentEntity extends BasicEntity {
 
     /** 学生实体的唯一标识ID */
@@ -28,6 +27,4 @@ public class StudentEntity extends BasicEntity {
     /** 班级的唯一标识 */
     @Column(nullable = false)
     private Integer clazzId;
-
-
 }

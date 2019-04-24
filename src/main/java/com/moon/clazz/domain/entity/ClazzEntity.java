@@ -12,6 +12,8 @@ import javax.persistence.*;
  * @description: 班级实体
  */
 @Data
+@Entity
+@Table(name = "clazz")
 public class ClazzEntity extends BasicEntity {
 
     /** 班级ID */

@@ -3,10 +3,7 @@ package com.moon.subject.domain.entity;
 import com.moon.common.domain.entity.BasicEntity;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @auther: Mr.Xu
@@ -14,6 +11,8 @@ import javax.persistence.Id;
  * @description: 课程实体
  */
 @Data
+@Entity
+@Table(name = "subject")
 public class SubjectEntity extends BasicEntity {
 
 
