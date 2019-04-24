@@ -1,6 +1,6 @@
-package com.moon.course.service.impl;
+package com.moon.subject.service.impl;
 
-import com.moon.course.service.CourseService;
+import com.moon.subject.service.SubjectService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
  * @description: 课程功能实现
  */
 @Service
-public class CourseServiceImpl implements CourseService {
+public class SubjectServiceImpl implements SubjectService {
 }

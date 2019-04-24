@@ -1,7 +1,7 @@
 package com.moon.common.config;
 
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
+        import org.springframework.context.annotation.PropertySource;
+        import org.springframework.stereotype.Component;
 
 /**
  * @program: ams

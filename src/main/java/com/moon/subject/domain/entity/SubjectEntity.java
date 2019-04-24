@@ -1,4 +1,4 @@
-package com.moon.course.domain.entity;
+package com.moon.subject.domain.entity;
 
 import com.moon.common.domain.entity.BasicEntity;
 import lombok.Data;
@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
 
 /**
  * @auther: Mr.Xu
@@ -15,7 +14,7 @@ import java.time.LocalDateTime;
  * @description: 课程实体
  */
 @Data
-public class CourseEntity extends BasicEntity {
+public class SubjectEntity extends BasicEntity {
 
 
     /** 课程实体的唯一标识ID */
