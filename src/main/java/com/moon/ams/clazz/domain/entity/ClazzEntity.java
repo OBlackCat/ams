@@ -25,10 +25,22 @@ public class ClazzEntity implements Serializable {
     private Integer id;
 
     /**
-     * 【班级名称】
+     * 【班级号码】
      */
     @Column(nullable = false, length = 30)
-    private String name;
+    private Integer clazzNum;
+
+    /**
+     * 【关联的专业系的唯一标识ID】
+     */
+    @Column(nullable = false)
+    private Integer departmentId;
+
+    /**
+     * 【关联的学院的唯一标识ID】
+     */
+    @Column(nullable = false)
+    private Integer literatureId;
 
     /**
      * 【阶段】 级的阶段 一年级 二年级等
@@ -36,6 +48,12 @@ public class ClazzEntity implements Serializable {
     @Column(nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private GradeEnum grade;
+
+    /**
+     * 【班级学生人数】
+     */
+    @Column
+    private Integer studentNum;
 
     /**
      * 【创建时间】 数据创建时间，创建后不再更新

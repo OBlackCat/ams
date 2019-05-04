@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @Entity
-@Table(name = "account_role")
+@Table(name = "a_account_role")
 public class AccountRoleEntity implements Serializable {
 
     /**
@@ -35,15 +35,4 @@ public class AccountRoleEntity implements Serializable {
     @Column(nullable = false)
     private Integer roleId;
 
-    /**
-     * 【创建时间】 数据创建时间，创建后不再更新
-     */
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime gmtCreate;
-
-    /**
-     * 【更新时间】 数据更新时间，新增时该数据为空
-     */
-    @Column(insertable = false)
-    private LocalDateTime gmtUpdate;
 }

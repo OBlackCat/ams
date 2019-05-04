@@ -26,43 +26,49 @@ public class ClassroomEntity {
     /**
      * 【校区编号】
      */
-    @Column(name = "campus_num")
+    @Column
     private Integer campusNum;
 
     /**
      * 【校区名】
      */
-    @Column(name = "campus_name", length = 30)
+    @Column(length = 30)
     private String campusName;
 
     /**
      * 【教学楼编号】
      */
-    @Column(name = "building_num")
+    @Column
     private Integer buildingNum;
 
     /**
      * 【教学楼名称】
      */
-    @Column(name = "building_name", length = 30)
+    @Column(length = 30)
     private String buildingName;
 
     /**
      * 【楼层】
      */
-    @Column(name = "floor_num")
+    @Column
     private Integer floorNum;
 
     /**
      * 【教室门牌号】
      */
-    @Column(name = "room_num")
+    @Column
     private Integer roomNum;
+
+    /**
+     * 【可容纳人数】
+     */
+    @Column(nullable = false)
+    private Integer capacity;
 
     /**
      * 【场地类型】 室内 / 室外
      */
-    @Column(name = "classroom_type", nullable = false)
+    @Column(nullable = false)
     private ClassroomTypeEnum classroomType;
 
 
